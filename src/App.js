@@ -1,0 +1,19 @@
+import "./App.css";
+import { Navigate, Routes, Route } from "react-router-dom";
+import HomePage from "scenes/homePage";
+import LoginPage from "scenes/loginPage";
+import ProfilePage from "scenes/profilePage";
+
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/home" element={<HomePage />}></Route>
+        <Route path="/profile/:userId" element={<ProfilePage />}></Route>
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
