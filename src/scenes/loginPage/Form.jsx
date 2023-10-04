@@ -22,16 +22,16 @@ import { isRejectedWithValue } from "@reduxjs/toolkit";
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
-  email: yup.string().required("required"),
-  password: yup.string().email("Invalid Email").required("required"),
+  email: yup.string().email("Invalid Email").required("required"),
+  password: yup.string().required("required"),
   location: yup.string().required("required"),
   occupation: yup.string().required("required"),
   picture: yup.string().required("required"),
 });
 
 const loginSchema = yup.object().shape({
-  email: yup.string().required("required"),
-  password: yup.string().email("Invalid Email").required("required"),
+  email: yup.string().email("Invalid Email").required("required"),
+  password: yup.string().required("required"),
 });
 
 const initialValuesRegister = {
@@ -64,7 +64,12 @@ function Form() {
     for (let value in values) {
       formData.append(value, values[value]);
     }
+    formData.delete("picture");
     formData.append("picturePath", values.picture.name);
+    // console formData
+    // for (var pair of formData.entries()) {
+    //   console.log(pair[0] + ", " + pair[1]);
+    // }
     const savedUserResponse = await fetch(
       "http://localhost:3001/auth/register",
       {
@@ -84,7 +89,7 @@ function Form() {
   const login = async (values, onSubmitProps) => {
     const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
-      header: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
     });
 
