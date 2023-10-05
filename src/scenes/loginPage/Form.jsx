@@ -64,12 +64,7 @@ function Form() {
     for (let value in values) {
       formData.append(value, values[value]);
     }
-    formData.delete("picture");
     formData.append("picturePath", values.picture.name);
-    // console formData
-    // for (var pair of formData.entries()) {
-    //   console.log(pair[0] + ", " + pair[1]);
-    // }
     const savedUserResponse = await fetch(
       "http://localhost:3001/auth/register",
       {
