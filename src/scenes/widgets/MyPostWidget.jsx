@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import UserImage from "components/UserImage";
 import WidgetWrapper from "components/WidgetWrapper";
-import FlexBetween from "components/flexBetween";
+import FlexBetween from "components/FlexBetween";
 import { useState } from "react";
 import Dropzone from "react-dropzone";
 import { useSelector, useDispatch } from "react-redux";
@@ -167,6 +167,7 @@ const MyPostWidget = ({ picturePath }) => {
           sx={{
             color: palette.background.alt,
             backgroundColor: palette.primary.main,
+            borderRadius: "3rem",
           }}
         >
           POST

@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
-import FlexBetween from "components/flexBetween";
+import FlexBetween from "components/FlexBetween";
 import { Password } from "@mui/icons-material";
 import { isRejectedWithValue } from "@reduxjs/toolkit";
 
