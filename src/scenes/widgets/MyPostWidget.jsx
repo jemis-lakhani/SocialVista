@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import UserImage from "components/UserImage";
 import WidgetWrapper from "components/WidgetWrapper";
-import FlexBetween from "components/FlexBetween";
+import FlexBetween from "components/flexBetween";
 import { useState } from "react";
 import Dropzone from "react-dropzone";
 import { useSelector, useDispatch } from "react-redux";

@@ -6,7 +6,7 @@ import {
   ShareOutlined,
 } from "@mui/icons-material";
 import { Box, Divider, IconButton, Typography } from "@mui/material";
-import FlexBetween from "components/FlexBetween";
+import FlexBetween from "components/flexBetween";
 import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";

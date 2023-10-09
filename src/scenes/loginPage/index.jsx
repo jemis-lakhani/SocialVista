@@ -27,7 +27,7 @@ function LoginPage() {
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
           Welcome to Socipedia, the social Media for Sociapaths!
         </Typography>
-        <Form></Form>
+        <Form />
       </Box>
     </Box>
   );
