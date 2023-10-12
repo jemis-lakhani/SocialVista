@@ -10,7 +10,6 @@ import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "theme";
 
 function App() {
-  console.log(process.env.REACT_APP_BACKEND_URL);
   const mode = useSelector((state) => state.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode), [mode]));
   const isAuth = Boolean(useSelector((state) => state.token));
