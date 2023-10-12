@@ -3,37 +3,37 @@ import WidgetWrapper from "components/WidgetWrapper";
 import FlexBetween from "components/flexBetween";
 
 const AdvertWidget = () => {
-  const { palette } = useTheme();
-  const dark = palette.neutral.dark;
-  const main = palette.neutral.main;
-  const medium = palette.neutral.medium;
+	const { palette } = useTheme();
+	const dark = palette.neutral.dark;
+	const main = palette.neutral.main;
+	const medium = palette.neutral.medium;
 
-  return (
-    <WidgetWrapper>
-      <FlexBetween>
-        <Typography color={dark} variant="h5" fontWeight="500">
-          Sponsored
-        </Typography>
-        <Typography color={medium}>Create Ad</Typography>
-      </FlexBetween>
-      <img
-        width="100%"
-        height="auto"
-        alt="advert"
-        src="http://localhost:3001/assets/info4.jpeg"
-        style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
-      />
-      <FlexBetween>
-        <Typography color={main}>MikaCosmotic</Typography>
-        <Typography color={medium}>mikacos.com</Typography>
-      </FlexBetween>
-      <Typography color={medium} m="0.5rem 0">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac
-        ultrices sem. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Nam placerat
-      </Typography>
-    </WidgetWrapper>
-  );
+	return (
+		<WidgetWrapper>
+			<FlexBetween>
+				<Typography color={dark} variant="h5" fontWeight="500">
+					Sponsored
+				</Typography>
+				<Typography color={medium}>Create Ad</Typography>
+			</FlexBetween>
+			<img
+				width="100%"
+				height="auto"
+				alt="advert"
+				src={`${process.env.REACT_APP_BACKEND_URL}/assets/WhatsApp Image 2023-10-10 at 3.46.16 PM.jpeg`}
+				style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
+			/>
+			<FlexBetween>
+				<Typography color={main}>MikaCosmotic</Typography>
+				<Typography color={medium}>mikacos.com</Typography>
+			</FlexBetween>
+			<Typography color={medium} m="0.5rem 0">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac
+				ultrices sem. Class aptent taciti sociosqu ad litora torquent per
+				conubia nostra, per inceptos himenaeos. Nam placerat
+			</Typography>
+		</WidgetWrapper>
+	);
 };
 
 export default AdvertWidget;
