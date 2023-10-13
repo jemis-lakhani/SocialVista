@@ -20,8 +20,8 @@ const PostWidget = ({
   name,
   description,
   location,
-  picturePath,
-  userPicturePath,
+  postImage,
+  userImage,
   likes,
   comments,
 }) => {
@@ -59,18 +59,18 @@ const PostWidget = ({
         friendId={postUserId}
         name={name}
         subtitle={location}
-        userPicturePath={userPicturePath}
+        userImage={userImage}
       />
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>
-      {picturePath && (
+      {postImage && (
         <img
           width="100%"
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`data:image/png;base64,${Buffer.from(picturePath).toString(
+          src={`data:image/png;base64,${Buffer.from(postImage).toString(
             "base64"
           )}`}
         />

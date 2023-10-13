@@ -12,30 +12,15 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const UserWidget = ({ userId, picturePath }) => {
-  const [user, setUser] = useState(null);
+const UserWidget = ({ userId, userImage }) => {
+  const user = useSelector((state) => state.user);
+  const friends = useSelector((state) => state.friends);
   const { palette } = useTheme();
   const navigate = useNavigate();
   const token = useSelector((state) => state.token);
   const dark = palette.neutral.dark;
   const medium = palette.neutral.medium;
   const main = palette.neutral.main;
-
-  const getUser = async () => {
-    const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/users/${userId}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
-    const data = await response.json();
-    setUser(data);
-  };
-
-  useEffect(() => {
-    getUser();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!user) return null;
 
@@ -46,7 +31,6 @@ const UserWidget = ({ userId, picturePath }) => {
     occupation,
     viewedProfile,
     impressions,
-    friends,
   } = user;
 
   return (
@@ -58,7 +42,7 @@ const UserWidget = ({ userId, picturePath }) => {
         onClick={() => navigate(`/profile/${userId}`)}
       >
         <FlexBetween gap="1rem">
-          <UserImage image={user.userImage.data}></UserImage>
+          <UserImage image={userImage} />
           <Box>
             <Typography
               variant="h4"
