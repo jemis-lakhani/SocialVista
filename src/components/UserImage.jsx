@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { Buffer } from "buffer";
 
 const UserImage = ({ image, size = "60px" }) => {
   return (
@@ -8,7 +9,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`${process.env.REACT_APP_BACKEND_URL}/assets/${image}`}
+        src={`data:image/png;base64,${Buffer.from(image).toString("base64")}`}
       />
     </Box>
   );
