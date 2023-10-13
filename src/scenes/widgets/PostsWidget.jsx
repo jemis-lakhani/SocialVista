@@ -7,7 +7,6 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
-  const user = useSelector((state) => state.user);
 
   const getPosts = async () => {
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/posts`, {
@@ -17,6 +16,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     const data = await response.json();
     dispatch(setPosts({ posts: data }));
   };
+
   const getUserPosts = async () => {
     const response = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/posts/${userId}/posts`,
@@ -39,32 +39,34 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   return (
     <>
-      {posts?.map(
-        ({
-          _id,
-          userId,
-          firstName,
-          lastName,
-          description,
-          location,
-          postImage,
-          likes,
-          comments,
-        }) => (
-          <PostWidget
-            key={_id}
-            postId={_id}
-            postUserId={userId}
-            name={`${firstName} ${lastName}`}
-            description={description}
-            location={location}
-            picturePath={postImage?.data}
-            userPicturePath={user.userImage?.data}
-            likes={likes}
-            comments={comments}
-          ></PostWidget>
-        )
-      )}
+      {posts &&
+        posts?.map(
+          ({
+            _id,
+            userId,
+            firstName,
+            lastName,
+            description,
+            location,
+            postImage,
+            userImage,
+            likes,
+            comments,
+          }) => (
+            <PostWidget
+              key={_id}
+              postId={_id}
+              postUserId={userId}
+              name={`${firstName} ${lastName}`}
+              description={description}
+              location={location}
+              postImage={postImage?.data}
+              userImage={userImage}
+              likes={likes}
+              comments={comments}
+            ></PostWidget>
+          )
+        )}
     </>
   );
 };
