@@ -29,7 +29,7 @@ import { setPosts } from "state";
 
 import React from "react";
 
-const MyPostWidget = ({ picturePath }) => {
+const MyPostWidget = ({ userImage }) => {
   const dispatch = useDispatch();
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
@@ -67,7 +67,7 @@ const MyPostWidget = ({ picturePath }) => {
   return (
     <WidgetWrapper>
       <FlexBetween gap="1.5rem">
-        <UserImage image={picturePath} />
+        <UserImage image={userImage} />
         <InputBase
           placeholder="What's on your mind..."
           onChange={(e) => setPost(e.target.value)}

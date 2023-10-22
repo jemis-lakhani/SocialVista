@@ -24,7 +24,7 @@ function App() {
           path="/"
           element={
             isAuth ? (
-              <HomePage />
+              <Navigate to="/home" />
             ) : (
               <AnauthWrapper>
                 <SignIn />
@@ -36,7 +36,7 @@ function App() {
           path="/signup"
           element={
             isAuth ? (
-              <HomePage />
+              <Navigate to="/home" />
             ) : (
               <AnauthWrapper>
                 <Register />

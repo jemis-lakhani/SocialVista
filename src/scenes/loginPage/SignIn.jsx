@@ -14,8 +14,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import CustomScnackbar from "components/CustomScnackbar";
-// import { Password } from "@mui/icons-material";
-// import { isRejectedWithValue } from "@reduxjs/toolkit";
 
 const loginSchema = yup.object().shape({
   email: yup.string().email("Invalid Email").required("Email is required"),

@@ -58,7 +58,7 @@ function Navbar() {
             },
           }}
         >
-          Sociopedia
+          SocialVista
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
