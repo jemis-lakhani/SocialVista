@@ -14,7 +14,7 @@ const AnauthWrapper = ({ children }) => {
         textAlign="center"
       >
         <Typography fontWeight="bold" fontSize="32px" color="primary">
-          Sociopedia
+          SocialVista
         </Typography>
       </Box>
       <Box
@@ -25,7 +25,7 @@ const AnauthWrapper = ({ children }) => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to Socipedia, the social Media for Sociapaths!
+          Welcome to SocialVista, the social Media for Sociapaths!
         </Typography>
         {children}
       </Box>
