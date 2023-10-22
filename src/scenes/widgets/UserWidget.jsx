@@ -9,7 +9,7 @@ import UserImage from "components/UserImage";
 import FlexBetween from "components/flexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const UserWidget = ({ userId, userImage }) => {
@@ -17,7 +17,7 @@ const UserWidget = ({ userId, userImage }) => {
   const friends = useSelector((state) => state.friends);
   const { palette } = useTheme();
   const navigate = useNavigate();
-  const token = useSelector((state) => state.token);
+  // const token = useSelector((state) => state.token);
   const dark = palette.neutral.dark;
   const medium = palette.neutral.medium;
   const main = palette.neutral.main;
@@ -50,7 +50,7 @@ const UserWidget = ({ userId, userImage }) => {
               fontWeight="500"
               sx={{
                 "&:hover": {
-                  color: palette.primary.light,
+                  color: palette.primary.dark,
                   cursor: "pointer",
                 },
               }}

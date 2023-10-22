@@ -9,6 +9,7 @@ import {
   FormControl,
   useTheme,
   useMediaQuery,
+  Stack,
 } from "@mui/material";
 import {
   Search,
@@ -37,7 +38,7 @@ function Navbar() {
   const neutralLight = theme.palette.neutral.light;
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
-  const primaryLight = theme.palette.primary.light;
+  // const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
   const fullName = `${user.firstName} ${user.lastName}`;
@@ -124,18 +125,18 @@ function Navbar() {
           bottom="0"
           height="100%"
           zIndex="10"
-          maxWidth="500px"
-          minWidth="300px"
+          maxWidth="200px"
+          minWidth="100px"
           backgroundColor={background}
         >
           {/** CLOSE ICON */}
-          <Box display="flex" justifyContent="flex-end" p="1rem">
+          <Stack display="flex" justifyContent="cener" p="1rem">
             <IconButton
               onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
             >
               <Close />
             </IconButton>
-          </Box>
+          </Stack>
 
           {/**MENU ITEMS */}
           <FlexBetween
@@ -144,6 +145,7 @@ function Navbar() {
             justifyContent="center"
             alignItems="center"
             gap="3rem"
+            paddingX={1}
           >
             <IconButton
               onClick={() => dispatch(setMode())}
@@ -161,16 +163,8 @@ function Navbar() {
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}
-                sx={{
-                  backgroundColor: neutralLight,
-                  width: "150px",
-                  borderRadius: "0.25rem",
-                  p: "0.25 rem 1rem",
-                  "& .MuiSelect-select:focus": {
-                    backgroundColor: neutralLight,
-                  },
-                }}
                 input={<InputBase />}
+                sx={{ background: "inherit" }}
               >
                 <MenuItem value={fullName}>
                   <Typography>{fullName}</Typography>

@@ -50,7 +50,10 @@ const PostWidget = ({
     );
 
     const updatedPost = await response.json();
-    dispatch(setPost({ post: updatedPost }));
+    console.log(updatedPost, "updatedPost");
+    if (updatedPost) {
+      dispatch(setPost({ post: updatedPost }));
+    }
   };
 
   return (
@@ -103,7 +106,7 @@ const PostWidget = ({
 
       {isComments && (
         <Box mt="0.5rem">
-          {comments.map((comment, i) => (
+          {comments?.map((comment, i) => (
             <Box key={`${name} -${i}`}>
               <Divider />
               <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
